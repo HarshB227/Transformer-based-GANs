@@ -15,7 +15,8 @@ Generates new sequences → converts back to MIDI
 Optional demo script to generate a ~30s sample
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Project Structure 
-<img width="448" height="930" alt="image" src="https://github.com/user-attachments/assets/5a62eddf-77a3-488a-9b9f-658d67f77cd2" />
+<img width="449" height="1024" alt="image" src="https://github.com/user-attachments/assets/273e6462-cf42-469c-b608-f80922b7db32" />
+
 
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
