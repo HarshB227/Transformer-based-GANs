@@ -1,6 +1,9 @@
 # Transformer-based-GANs
+
 Controllable Music Generation Transformer-based GANs
+
 🎵 Music-GAN (Transformer-GAN) — Controllable Multi-Track Symbolic Music Generation
+
 A Transformer-based Generator trained with a GAN-style Discriminator to generate symbolic (MIDI) music with basic controllability (e.g., mood/emotion tags, adding drums/violin, etc.).
 This repo operates in the symbolic domain. Audio rendering (MIDI→WAV) is optional.
 If your Git pushes keep failing: you are committing huge files (datasets/checkpoints). Don’t. This README includes the correct structure + rules.
