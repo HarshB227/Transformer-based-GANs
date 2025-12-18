@@ -1,0 +1,170 @@
+:root {
+  --bg: #0b0b0f;
+  --card: rgba(255,255,255,0.06);
+  --text: #eaeaea;
+  --muted: #b3b3b3;
+  --accent: #6c63ff;
+  --link: #ff5c5c;
+  --radius: 18px;
+}
+
+/* ========================= */
+/* RESET */
+/* ========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background:
+    linear-gradient(
+      rgba(10, 10, 20, 0.75),
+      rgba(10, 10, 20, 0.75)
+    ),
+    url("image/v1016-b-09.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  color: var(--text);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.7;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+
+  scrollbar-gutter: stable both-edges;
+}
+
+
+/* ========================= */
+/* NAV */
+/* ========================= */
+.topbar {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  z-index: 1000;
+}
+
+.topnav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(6px);
+  border-radius: 14px;
+  padding: 8px 14px;
+
+  max-width: calc(100vw - 24px);
+}
+
+.topnav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 500;
+  flex-shrink: 0;
+
+  cursor: pointer;
+  touch-action: manipulation;
+
+  transition: color 0.15s ease, opacity 0.15s ease;
+}
+
+.topnav .github {
+  color: #ff3b3b;          /* solid red */
+  font-weight: 600;
+}
+
+.topnav .github:hover {
+  color: #ff6b6b;          /* lighter red on hover */
+}
+
+.topnav .github:active {
+  opacity: 0.7;
+}
+/* ========================= */
+/* LAYOUT */
+/* ========================= */
+.wrap {
+  max-width: 1000px;
+  margin: 130px auto 80px;
+  padding: 0 24px;
+}
+
+/* ========================= */
+/* CARDS */
+/* ========================= */
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 28px;
+  margin-top: 32px;
+}
+
+/* ========================= */
+/* TEXT */
+/* ========================= */
+h2 {
+  margin-bottom: 10px;
+}
+
+p {
+  margin-bottom: 14px;
+}
+
+ul {
+  margin-left: 20px;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+a {
+  color: var(--link);
+}
+
+/* ========================= */
+/* FIGURES — CRITICAL FIX */
+/* ========================= */
+.figure {
+  margin-top: 24px;
+}
+
+.figure-wide {
+  max-width: 900px;        /* 🔒 same width for ALL figures */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.figure-wide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+/* Caption */
+.caption {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* ========================= */
+/* MOBILE */
+/* ========================= */
+@media (max-width: 420px) {
+  .topnav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

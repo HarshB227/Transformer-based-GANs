@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MusicGAN – Dataset</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- Top navigation -->
+<header class="topbar">
+  <nav class="topnav">
+    <a href="index.html">Home</a>
+    <a href="model.html">Model</a>
+    <a class="active" href="dataset.html">Dataset</a>
+    <a href="results.html">Results</a>
+    <a href="paper.html">References</a>
+    <a class="github" href="https://github.com/your-repo" target="_blank">GitHub</a>
+  </nav>
+</header>
+
+<main class="wrap">
+
+  <section class="card">
+    <h2>Dataset</h2>
+
+    <h3>Lakh Pianoroll Dataset</h3>
+    <p>
+      We use the <strong>cleansed version</strong> of the
+      <a class="red-link" href="https://colinraffel.com/projects/lmd/" target="_blank">
+        Lakh Pianoroll Dataset (LPD)
+      </a>.
+      LPD contains <strong>174,154 multitrack pianorolls</strong> derived from MIDI
+      files in the Lakh MIDI Dataset (LMD).
+    </p>
+
+    <p>
+      The cleansed subset includes <strong>21,425 pianorolls</strong> that are in
+      <strong>4/4 time</strong> and aligned with entries in the
+      <a class="red-link" href="https://millionsongdataset.com/" target="_blank">
+        Million Song Dataset (MSD)
+      </a>.
+    </p>
+  </section>
+
+  <section class="card">
+    <h3>Training Data Processing</h3>
+    <ul>
+      <li>Symbolic timing is used (tempo information discarded)</li>
+      <li>Velocity information removed using binary-valued pianorolls</li>
+      <li>84 pitch values (C1 to B7)</li>
+      <li>Tracks merged into 5 categories:
+        <em>Bass, Drums, Guitar, Piano, Strings</em>
+      </li>
+      <li>Only tracks tagged with <strong>rock</strong> are retained</li>
+      <li>
+        Musically meaningful <strong>4-bar phrases</strong> extracted using
+        structure features
+      </li>
+    </ul>
+
+    <p>
+      Final tensor shape:
+      <strong>4 (bars) × 96 (timesteps) × 84 (pitch) × 5 (tracks)</strong>
+    </p>
+  </section>
+
+  <section class="card">
+    <h3>Example Pianorolls</h3>
+    <p>
+      Below are representative multitrack pianorolls from the training data.
+      Tracks (top to bottom):
+      <em>Bass, Drums, Guitar, Strings, Piano</em>.
+    </p>
+
+    <div class="figure figure-wide">
+  <img src="image/hist_piano.png"
+       alt="Piano pitch distribution">
+</div>
+  </section>
+
+<section class="card">
+  <h3>Reference</h3>
+  <ol class="references">
+    <li>
+      Serrà, J., Müller, M., Grosche, P. and Arcos, J.L. (2012).
+      <em>Unsupervised Detection of Music Boundaries by Time Series Structure Features</em>.
+      AAAI Conference on Artificial Intelligence.
+    </li>
+
+    <li>
+      Huang, C.-Z.A., Vaswani, A., Uszkoreit, J., Shazeer, N., Simon, I., Hawthorne, C., Dai, A.M., Hoffman, M.D. and Eck, D. (2018).
+      <em>Music Transformer: Generating Music with Long-Term Structure</em>.
+      International Conference on Learning Representations (ICLR).
+    </li>
+
+    <li>
+      Dong, H.-W., Hsiao, W.-Y., Yang, L.-C. and Yang, Y.-H. (2018).
+      <em>MuseGAN: Multi-track Sequential Generative Adversarial Networks for Symbolic Music Generation and Accompaniment</em>.
+      AAAI Conference on Artificial Intelligence.
+    </li>
+
+    <li>
+      Briot, J.-P., Hadjeres, G. and Pachet, F. (2020).
+      <em>Deep Learning Techniques for Music Generation</em>.
+      Springer.
+    </li>
+
+    <li>
+      Roberts, A., Engel, J., Raffel, C., Hawthorne, C. and Eck, D. (2018).
+      <em>A Hierarchical Latent Vector Model for Learning Long-Term Structure in Music</em>.
+      International Conference on Machine Learning (ICML).
+    </li>
+  </ol>
+</section>
+
+
+</main>
+
+</body>
+</html>

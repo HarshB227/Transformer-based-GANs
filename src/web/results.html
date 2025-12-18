@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Results | MusicGAN-Transformer</title>
+
+  <!-- Non-blocking CSS -->
+  <link rel="preload" href="style.css" as="style" onload="this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="style.css"></noscript>
+
+  <!-- Prefetch other pages -->
+  <link rel="prefetch" href="index.html">
+  <link rel="prefetch" href="model.html">
+  <link rel="prefetch" href="data.html">
+  <link rel="prefetch" href="paper.html">
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <header class="topbar">
+    <nav class="topnav">
+      <a href="index.html">Home</a>
+      <a href="model.html">Model</a>
+      <a href="dataset.html">Dataset</a>
+      <a href="results.html" class="active">Results</a>
+      <a href="paper.html">References</a>
+      <a class="github" href="https://github.com/your-repo" target="_blank">GitHub</a>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main class="wrap">
+
+    <!-- SECTION: OVERVIEW -->
+    <section class="card">
+      <h2>Results</h2>
+      <p>
+        This section presents qualitative and diagnostic results from the
+        <strong>MusicGAN-Transformer</strong> model. Since symbolic music generation
+        lacks an objective ground truth, evaluation is performed using
+        <em>proxy metrics</em> that assess generation stability, structural coherence,
+        and diversity rather than musical “accuracy”.
+      </p>
+
+      <p>
+        The reported results are derived from randomly sampled generations without
+        cherry-picking. All figures correspond directly to the evaluation procedures
+        described in the accompanying report.
+      </p>
+    </section>
+
+    <!-- SECTION: ENERGY -->
+    <section class="card">
+      <h2>Temporal Energy Distribution</h2>
+      <p>
+        Figure 1 illustrates normalized musical energy computed over fixed
+        0.5-second time bins for piano, violin, and drum tracks. Energy is derived
+        from MIDI velocity values and serves as a proxy for dynamic activity.
+      </p>
+
+      <p>
+        The distribution demonstrates structured temporal variation and
+        inter-instrument coordination, indicating that the generator learns
+        non-trivial rhythmic and dynamic patterns rather than producing uniform
+        noise.
+      </p>
+
+      <img src="image\energy_bar.png"
+           alt="Music Energy per Time Segment"
+           style="width:100%; border-radius:12px; margin-top:16px;">
+      <p class="sub">Fig. 1. Normalized energy per time segment across instruments.</p>
+    </section>
+
+    <!-- SECTION: PROXY ACCURACY -->
+    <section class="card">
+      <h2>Proxy Accuracy Diagnostics</h2>
+      <p>
+        Because symbolic music generation does not admit a notion of supervised
+        accuracy, we employ proxy diagnostics to evaluate generation reliability.
+        These metrics measure internal model behavior rather than musical quality.
+      </p>
+
+      <p>
+        The following figure reports <em>generation density</em>, defined as the
+        proportion of non-padding tokens produced over time. Higher values indicate
+        stable and continuous symbolic generation.
+      </p>
+
+      <img src="image\proxy_accuracy.png"
+           alt="Proxy Accuracy via Generation Density"
+           style="width:100%; border-radius:12px; margin-top:16px;">
+      <p class="sub">Fig. 2. Proxy accuracy measured via generation density.</p>
+    </section>
+
+    <!-- SECTION: GENERATOR CONFIDENCE -->
+    <section class="card">
+      <h2>Generator Confidence</h2>
+      <p>
+        Generator confidence is measured as the mean maximum softmax probability
+        across generated tokens. This diagnostic reflects decisiveness in token
+        selection and provides insight into convergence behavior.
+      </p>
+
+      <p>
+        Sustained high confidence indicates stable learning dynamics, while isolated
+        drops correspond to exploratory sampling during adversarial training.
+      </p>
+
+      <img src="image\generator_confidence.png"
+           alt="Generator Confidence over Training"
+           style="width:100%; border-radius:12px; margin-top:16px;">
+      <p class="sub">Fig. 3. Generator confidence across training iterations.</p>
+    </section>
+
+    <!-- SECTION: TOKEN DISTRIBUTION -->
+    <section class="card">
+      <h2>Token Distribution Analysis</h2>
+      <p>
+        To detect mode collapse and repetitive behavior, token frequency
+        distributions are analyzed across generated sequences. A healthy
+        long-tailed distribution indicates diverse symbolic usage.
+      </p>
+
+      <p>
+        The observed distribution confirms that adversarial training discourages
+        trivial repetition and promotes balanced utilization of the token
+        vocabulary.
+      </p>
+
+      <img src="image\token_hist.png"
+           alt="Token Distribution Histogram"
+           style="width:100%; border-radius:12px; margin-top:16px;">
+      <p class="sub">Fig. 4. Token frequency distribution for generated sequences.</p>
+    </section>
+
+    <!-- SECTION: AUDIO -->
+    <section class="card">
+      <h2>Generated Audio Sample</h2>
+      <p>
+        The following audio clip corresponds to a randomly sampled 30-second
+        symbolic composition rendered from MIDI. The sample is generated entirely
+        from latent noise without post-processing or manual editing.
+      </p>
+
+  
+
+  <audio controls class="audio-player">
+    <source src="audio/gan_30sec_20251217_084026.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio controls class="audio-player">
+    <source src="audio/gan_30sec_20251217_083825.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio controls class="audio-player">
+    <source src="audio/gan_30sec_20251217_083509.mp3" type="audio/mpeg">
+  </audio>
+</section>
+
+    </section>
+
+  </main>
+
+</body>
+</html>

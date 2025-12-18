@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Music GAN Transformer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- TOP NAV (RIGHT CORNER) -->
+  <header class="topbar">
+    <nav class="topnav">
+      <a href="#home" class="active">Home</a>
+      <a href="model.html">Model</a>
+      <a href="dataset.html">Dataset</a>
+      <a href="results.html">Results</a>
+      <a href="paper.html">Papers</a>
+      <a class="github" href="https://github.com/your-repo" target="_blank">GitHub</a>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="wrap">
+
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <h1>Music Generation using GAN + Transformer</h1>
+      <p class="sub">MSc Data Science · Generative AI Project</p>
+    </section>
+
+    <!-- INTRO -->
+    <section class="intro">
+      <p>
+        <strong>MusicGAN-Transformer</strong> is a symbolic music generation system
+        designed to produce <strong>polyphonic multi-track compositions</strong>.
+        The model generates music from scratch using a Transformer-based Generator
+        trained adversarially with a GAN Discriminator.
+      </p>
+
+      <p id="dataset">
+        Training data is sourced from the
+        <a class="dataset-link"
+           href="https://colinraffel.com/projects/lmd/"
+           target="_blank">
+           Lakh MIDI Dataset
+        </a>,
+        enabling the generation of structured piano, violin,
+        and drum tracks with controllable emotional tone.
+      </p>
+
+      <p>
+        Listen to a generated 30-second sample below.
+      </p>
+
+      <!-- ✅ WORKING AUDIO -->
+      <audio controls preload="auto" class="audio-player">
+  <source src="audio/gan_30sec.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+    </section>
+
+  </main>
+
+</body>
+</html>

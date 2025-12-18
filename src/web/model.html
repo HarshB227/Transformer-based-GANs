@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Model Architecture · MusicGAN</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <nav class="topnav">
+    <a href="index.html">Home</a>
+    <a class="active" href="model.html">Model</a>
+    <a href="dataset.html">Dataset</a>
+    <a href="results.html">Results</a>
+    <a href="paper.html">References</a>
+    <a class="github" href="https://github.com/your-repo" target="_blank">GitHub</a>
+  </nav>
+</header>
+
+<main class="wrap">
+
+  <!-- MODEL OVERVIEW -->
+  <section class="card">
+    <h2>Model Architecture</h2>
+    <p>
+      The <strong>MusicGAN-Transformer</strong> framework integrates a
+      Transformer-based generator with adversarial training to produce
+      structured, multi-track symbolic music.
+    </p>
+  </section>
+
+  <!-- MULTITRACK -->
+  <section class="card">
+    <h2>Multitrack Interdependency</h2>
+    <ul>
+      <li><strong>Jamming model</strong>: independent generators per track</li>
+      <li><strong>Composer model</strong>: single generator for all tracks</li>
+      <li><strong>Hybrid model</strong>: shared and private generators</li>
+    </ul>
+
+    <!-- ARCHITECTURE FIGURE -->
+    <div class="figure figure-wide">
+      <img src="image/pipeline.png"
+           alt="Transformer-GAN pipeline for symbolic music generation">
+      <p class="caption">
+        Overview of the Transformer-GAN pipeline, showing dataset preprocessing,
+        tokenisation, latent-conditioned Transformer generation, and multi-track
+        MIDI output evaluation.
+      </p>
+    </div>
+  </section>
+
+  <!-- TEMPORAL MODEL -->
+  <section class="card">
+    <h2>Temporal Structure Modeling</h2>
+    <p>
+      Temporal dependencies are modeled hierarchically through a Transformer
+      architecture that captures both local rhythmic patterns and long-range
+      musical structure across tracks.
+    </p>
+
+    <!-- CONFIDENCE FIGURE -->
+    <div class="figure figure-wide">
+      <img src="image/generator_confidence.png"
+           alt="Generator confidence across training iterations">
+      <p class="caption">
+        Generator confidence proxy across training iterations, indicating stable
+        convergence and reduced uncertainty during adversarial training.
+      </p>
+    </div>
+  </section>
+
+</main>
+
+</body>
+</html>
