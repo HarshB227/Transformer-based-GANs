@@ -15,44 +15,8 @@ Generates new sequences → converts back to MIDI
 Optional demo script to generate a ~30s sample
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Project Structure 
-music-gan/
-│
-├── README.md
-├── requirements.txt              # or pyproject.toml (pick one)
-├── .gitignore
-│
-├── src/
-│   └── music_gan/                # your actual python package
-│       ├── __init__.py
-│       ├── config.py
-│       ├── dataset.py
-│       ├── tokenization_small.py
-│       ├── audio_render.py
-│       ├── data_fetch.py
-│       ├── clean_metadata.py
-│       │
-│       ├── models/
-│       │   ├── __init__.py
-│       │   ├── generator.py
-│       │   └── discriminator.py
-│       │
-│       └── utils/
-│           ├── __init__.py
-│           └── *.py
-│
-├── scripts/                      # runnable entrypoints ONLY
-│   ├── train_gan.py
-│   ├── run_demo.py
-│   └── clean_metadata.py         # optional wrapper
-│
-├── data/                         # never push raw dataset
-│   ├── raw/
-│   └── processed/
-│
-├── checkpoints/                  # don’t push (or use Releases/LFS)
-├── outputs/                      # generated midi/wav/plots
-└── notebooks/
-├─ web/        (only if demo)
+<img width="448" height="930" alt="image" src="https://github.com/user-attachments/assets/5a62eddf-77a3-488a-9b9f-658d67f77cd2" />
+
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Requirements
